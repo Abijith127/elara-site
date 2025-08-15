@@ -192,16 +192,33 @@
             <div>Phone/WhatsApp: <a class="underline" href="https://wa.me/910000000000" target="_blank">+91-00000-00000</a></div>
             <div>Hours: 10:00–18:00 IST (Mon–Sat)</div>
           </div>
-        </div>
-        <form class="grid grid-cols-1 gap-3" onsubmit="event.preventDefault(); alert('Thanks! We\'ll get back to you soon.');">
-          <input placeholder="Your name" required class="px-3 py-2 rounded-xl border border-slate-200" />
-          <input placeholder="Email or phone" required class="px-3 py-2 rounded-xl border border-slate-200" />
-          <textarea placeholder="How can we help?" rows="4" required class="px-3 py-2 rounded-xl border border-slate-200"></textarea>
-          <button type="submit" class="px-5 py-3 rounded-2xl bg-rose-600 text-white font-medium shadow hover:bg-rose-700 w-max">Send message</button>
-        </form>
-      </div>
-    </div>
-  </section>
+      <form id="whatsappForm" class="grid grid-cols-1 gap-3" onsubmit="sendToWhatsApp(event)">
+  <input placeholder="Your name" id="name" required class="px-3 py-2 rounded-xl border border-slate-200" />
+  
+  <input placeholder="Email or phone" id="email" required class="px-3 py-2 rounded-xl border border-slate-200" />
+  
+  <textarea placeholder="How can we help?" id="message" rows="4" required class="px-3 py-2 rounded-xl border border-slate-200"></textarea>
+  
+  <button type="submit" class="px-5 py-3 rounded-2xl bg-rose-600 text-white font-medium shadow hover:bg-rose-700 w-max">
+    Send message
+  </button>
+</form>
+<script>
+function sendToWhatsApp(event) {
+  event.preventDefault();
+  
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+  
+  // Replace with your WhatsApp number in international format
+  let phoneNumber = "910000000000"; 
+  
+  let url = `https://wa.me/${phoneNumber}?text=Hello, my name is ${encodeURIComponent(name)}. Email/Phone: ${encodeURIComponent(email)}. Message: ${encodeURIComponent(message)}`;
+  
+  window.open(url, "_blank");
+}
+</script>
 
   <!-- FOOTER -->
   <footer class="mt-12 border-t border-slate-100">
