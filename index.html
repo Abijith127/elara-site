@@ -1,43 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elara - Fits That Feel Like You</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitsByElara — Effortless Ethnicwear</title>
+  <meta name="description" content="Short Kurtis at ₹399. Minimal yet expressive designs. Inclusive sizes S–XXL. COD, fast shipping, easy returns." />
+  <link rel="icon" href="images/Screenshot_20250813_011123_OneDrive.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Arial", "sans-serif"] }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-slate-900">
+  <div class="w-full bg-gradient-to-r from-pink-600 to-rose-500 text-white text-center text-xs sm:text-sm py-2">
+    ✨ Flat Sale — Short Kurtis at ₹399 (MRP ₹799) • Free Shipping over ₹999
+  </div>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-100">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-2">
-        <!-- Logo Image -->
-        <img src="images/Screenshot_20250813_011123_OneDrive.jpg" 
-             alt="Elara Logo" 
-             class="w-10 h-10 rounded-xl shadow-sm object-cover">
+        <!-- Logo -->
+        <img src="images/Screenshot_20250813_011123_OneDrive.jpg" alt="Elara Logo" class="w-9 h-9 rounded-xl shadow-sm object-cover"><!-- Replace if needed -->
         <div class="leading-none">
           <div class="text-xl font-bold tracking-tight">Elara</div>
-          <div class="text-[11px] uppercase tracking-widest text-slate-500">
-            Fits that feel like you
-          </div>
+          <div class="text-[11px] uppercase tracking-widest text-slate-500">Fits that feel like you</div>
         </div>
       </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a class="hover:text-rose-600" href="#shop">Shop</a>
+        <a class="hover:text-rose-600" href="#why">Why Elara</a>
+        <a class="hover:text-rose-600" href="#size">Sizes</a>
+        <a class="hover:text-rose-600" href="#contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <input aria-label="Search" placeholder="Search kurtis…" class="hidden sm:block px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-rose-200" />
+        <button class="px-3 py-2 rounded-xl border border-slate-200 hover:border-rose-300">Cart (0)</button>
+      </div>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-    <h1 class="text-3xl font-bold mb-4">Welcome to Elara</h1>
-    <p class="text-gray-700">Discover fits that feel like you — stylish, comfortable, and uniquely yours.</p>
-  </main>
+  <!-- HERO -->
+  <section id="top" class="relative overflow-hidden">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Effortless ethnicwear, <span class="text-rose-600">everyday</span></h1>
+        <p class="mt-4 text-slate-600 text-lg">Minimal yet expressive designs. Premium fabrics for all-day comfort. Inclusive sizing S–XXL.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <!-- WhatsApp Redirect -->
+          <a href="https://wa.me/910000000000?text=Hi%20I%20want%20to%20shop%20Short%20Kurtis" target="_blank" rel="noopener" 
+             class="px-5 py-3 rounded-2xl bg-rose-600 text-white font-medium shadow hover:bg-rose-700">
+             Shop Short Kurtis
+          </a>
+          <a href="#why" class="px-5 py-3 rounded-2xl border border-slate-200 font-medium hover:border-rose-300">Why Elara?</a>
+        </div>
+        <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-500">
+          <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> COD Available</div>
+          <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 7-day Returns</div>
+          <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Free Size Exchange</div>
+        </div>
+      </div>
+      <div class="relative">
+        <!-- Hero Image -->
+        <img src="images/Screenshot_20250813_011123_OneDrive.jpg" alt="Featured Kurti" class="aspect-[4/5] object-cover rounded-3xl shadow-xl border border-white/60"><!-- Replace -->
+      </div>
+    </div>
+  </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-100 border-t border-gray-200 py-6 mt-12">
-    <div class="max-w-6xl mx-auto px-4 text-center text-gray-500 text-sm">
-      © 2025 Elara. All rights reserved.
+  <!-- SHOP SECTION -->
+  <section id="shop" class="bg-slate-50/60 border-y border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <h2 class="text-2xl font-bold mb-6">Short Kurtis</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <!-- Product 1 -->
+        <article class="group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden">
+          <img src="images/Screenshot_20250813_011123_OneDrive.jpg" alt="Short Kurti — Rose Blush" class="aspect-[4/5] object-cover"><!-- Replace -->
+          <div class="p-4">
+            <div class="text-lg font-semibold">Short Kurti — Rose Blush</div>
+            <div class="text-rose-600 font-bold">₹399 <span class="line-through text-gray-400">₹799</span></div>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden">
+          <img src="images/Screenshot_20250813_011123_OneDrive.jpg" alt="Short Kurti — Jade Green" class="aspect-[4/5] object-cover"><!-- Replace -->
+          <div class="p-4">
+            <div class="text-lg font-semibold">Short Kurti — Jade Green</div>
+            <div class="text-rose-600 font-bold">₹399 <span class="line-through text-gray-400">₹799</span></div>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden">
+          <img src="images/Screenshot_20250813_011123_OneDrive.jpg" alt="Short Kurti — Cloud Gray" class="aspect-[4/5] object-cover"><!-- Replace -->
+          <div class="p-4">
+            <div class="text-lg font-semibold">Short Kurti — Cloud Gray</div>
+            <div class="text-rose-600 font-bold">₹399 <span class="line-through text-gray-400">₹799</span></div>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden">
+          <img src="images/Screenshot_20250813_011123_OneDrive.jpg" alt="Short Kurti — Midnight" class="aspect-[4/5] object-cover"><!-- Replace -->
+          <div class="p-4">
+            <div class="text-lg font-semibold">Short Kurti — Midnight</div>
+            <div class="text-rose-600 font-bold">₹399 <span class="line-through text-gray-400">₹799</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 border-t border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 text-center text-xs text-slate-500">
+      © <span id="year"></span> Elara. All rights reserved.
     </div>
   </footer>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
