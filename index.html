@@ -213,12 +213,71 @@
         <div class="rounded-xl border border-slate-200 p-2"><div class="font-semibold">XL</div><div class="text-[11px] text-slate-500">Bust: 40 in / 102 cm</div></div>
         <div class="rounded-xl border border-slate-200 p-2"><div class="font-semibold">XXL</div><div class="text-[11px] text-slate-500">Bust: 42 in / 107 cm</div></div>
         <div class="rounded-xl border border-slate-200 p-2"><div class="font-semibold">3XL</div><div class="text-[11px] text-slate-500">Bust: 44 in / 112 cm</div></div>
-        <div class="rounded-xl border border-slate-200 p-2"><div class="font-semibold">S</div><div class="text-[11px] text-slate-500">Bust: 36 in / 91 cm</div></div>
-        <div class="rounded-xl border border-slate-200 p-2"><div class="font-semibold">M</div><div class="text-[11px] text-slate-500">Bust: 38 in / 97 cm</div></div>
-        <div class="rounded-xl border border-slate-200 p-2"><div class="font-semibold">L</div><div class="text-[11px] text-slate-500">Bust: 40 in / 102 cm</div></div>
-        <div class="rounded-xl border border-slate-200 p-2"><div class="font-semibold">XL</div><div class="text-[11px] text-slate-500">Bust: 42 in / 107 cm</div></div>
-        <div class="rounded-xl border border-slate-200 p-2"><div class="font-semibold">XXL</div><div class="text-[11px] text-slate-500">Bust: 44 in / 112 cm</div></div>
-        <div class="rounded-xl border border-slate-200 p-2"><div class="font-semibold">3XL</div><div class="text-[11px] text-slate-500">Bust: 46 in / 117 cm</div></div>
       </div>
     </div>
   </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="rounded-3xl bg-white border border-slate-100 p-6 shadow-sm">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-xl font-bold">Contact Us</h3>
+          <p class="text-slate-600">Have questions about sizing, orders, or returns? We’re here to help.</p>
+          <div class="mt-4 text-sm text-slate-600">
+            <div>Email: <a href="mailto:support@fitsbyelara.com" class="underline">support@fitsbyelara.com</a></div>
+            <div>Phone/WhatsApp: <a class="underline" href="https://wa.me/919809452736" target="_blank">+91 98094 52736</a></div>
+            <div>Hours: 10:00–18:00 IST (Mon–Sat)</div>
+          </div>
+        </div>
+        <form class="grid grid-cols-1 gap-3" onsubmit="event.preventDefault(); alert('Thanks! We\'ll get back to you soon.');">
+          <input placeholder="Your name" required class="px-3 py-2 rounded-xl border border-slate-200" />
+          <input placeholder="Email or phone" required class="px-3 py-2 rounded-xl border border-slate-200" />
+          <textarea placeholder="How can we help?" rows="4" required class="px-3 py-2 rounded-xl border border-slate-200"></textarea>
+          <button type="submit" class="px-5 py-3 rounded-2xl bg-rose-600 text-white font-medium shadow hover:bg-rose-700 w-max">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 border-t border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid md:grid-cols-4 gap-8 text-sm">
+      <div>
+        <div class="text-lg font-bold">Elara</div>
+        <p class="mt-2 text-slate-600">Step into a world of effortless ethnicwear.</p>
+      </div>
+      <div>
+        <div class="font-semibold">Shop</div>
+        <ul class="mt-2 space-y-2 text-slate-600">
+          <li><a href="#shop">Short Kurtis</a></li>
+          <li><a href="#size">Size Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold">Help</div>
+        <ul class="mt-2 space-y-2 text-slate-600">
+          <li><a href="#contact">Shipping & Returns</a></li>
+          <li><a href="#contact">Order Tracking</a></li>
+          <li><a href="#contact">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold">Follow</div>
+        <ul class="mt-2 space-y-2 text-slate-600">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center text-xs text-slate-500 py-6 border-t border-slate-100">
+      © <span id="year"></span> Elara. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
