@@ -1,337 +1,350 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FitsByElara — Effortless Ethnicwear</title>
-  <meta name="description" content="Short Kurtis at ₹399. Minimal yet expressive designs. Inclusive sizes S–XXL. COD, fast shipping, easy returns." />
-  <link rel="icon" href="images/Screenshot_20250813_011123_OneDrive.jpg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Arial", "sans-serif"],
-          },
-        },
-      },
-    };
-  </script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Product Carousel with Size & Contact</title>
+<style>
+  body {
+    margin: 0;
+    background: #181616;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  /* Carousel Styles */
+  .carousel-container {
+    max-width: 900px;
+    margin: 40px auto 60px;
+    perspective: 1500px;
+    position: relative;
+  }
+  .carousel {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    user-select: none;
+  }
+  .carousel-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 260px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -130px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  .carousel-item .label {
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+  }
+  .carousel-item .discount {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    text-shadow: 1px 1px 4px black;
+  }
+  .carousel-item.center {
+    transform: translateX(0) translateZ(150px);
+    opacity: 1;
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+  }
+  .carousel-item.left1 {
+    transform: translateX(-280px) translateZ(50px) rotateY(25deg);
+    opacity: 0.7;
+    z-index: 5;
+  }
+  .carousel-item.left2 {
+    transform: translateX(-520px) translateZ(-100px) rotateY(40deg);
+    opacity: 0.4;
+    z-index: 1;
+  }
+  .carousel-item.right1 {
+    transform: translateX(280px) translateZ(50px) rotateY(-25deg);
+    opacity: 0.7;
+    z-index: 5;
+  }
+  .carousel-item.right2 {
+    transform: translateX(520px) translateZ(-100px) rotateY(-40deg);
+    opacity: 0.4;
+    z-index: 1;
+  }
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    z-index: 100;
+    background: rgba(0,0,0,0.3);
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+  .nav:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  .nav.left {
+    left: -60px;
+  }
+  .nav.right {
+    right: -60px;
+  }
+
+  /* Size & Shop Now */
+  .product-action {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    text-align: center;
+  }
+  select {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+    min-width: 120px;
+  }
+  button.shop-now {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button.shop-now:hover {
+    background-color: #0842c5;
+  }
+
+  /* Contact & Help Me Section */
+  .contact-help {
+    max-width: 900px;
+    margin: 40px auto 80px;
+    background-color: #222;
+    border-radius: 12px;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .contact-details, .help-me {
+    flex: 1 1 300px;
+  }
+  .contact-details h2,
+  .help-me h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 8px;
+    font-weight: 700;
+  }
+  .contact-details p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .help-me p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  .help-me button {
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .help-me button:hover {
+    background-color: #0842c5;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #111;
+    color: #777;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+  }
+</style>
 </head>
-<body class="bg-white text-slate-900">
-  <!-- Top Offer Banner -->
-  <div class="w-full bg-gradient-to-r from-pink-600 to-rose-500 text-white text-center text-xs sm:text-sm py-2">
-    ✨ Flat Sale — Short Kurtis at ₹399 (MRP ₹599) • Free Shipping over ₹999
+<body>
+
+<!-- Carousel -->
+<div class="carousel-container">
+  <div class="nav left" id="prev">&#10094;</div>
+  <div class="nav right" id="next">&#10095;</div>
+  <div class="carousel" id="carousel"></div>
+</div>
+
+<!-- Size selection & Shop Now -->
+<div class="product-action">
+  <select id="sizeSelect" required>
+    <option value="" disabled selected>Select Size</option>
+    <option value="S">Small (S)</option>
+    <option value="M">Medium (M)</option>
+    <option value="L">Large (L)</option>
+    <option value="XL">Extra Large (XL)</option>
+  </select>
+  <button class="shop-now" id="shopNowBtn">Shop Now</button>
+</div>
+
+<!-- Contact and Help Me -->
+<div class="contact-help">
+  <div class="contact-details">
+    <h2>Contact Details</h2>
+    <p><strong>Email:</strong> support@fashionstore.com</p>
+    <p><strong>Phone:</strong> +1 234 567 890</p>
+    <p><strong>Address:</strong> 123 Fashion Street, New York, NY</p>
+    <p><strong>Business Hours:</strong> Mon - Fri, 9 AM - 6 PM</p>
   </div>
+  <div class="help-me">
+    <h2>Need Help?</h2>
+    <p>If you need assistance with your order or sizing, click the button below and our support team will assist you promptly.</p>
+    <button id="helpMeBtn">Help Me</button>
+  </div>
+</div>
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-2">
-        <img src="images/Screenshot_20250813_011123_OneDrive.jpg" alt="Elara Logo" class="w-9 h-9 rounded-xl shadow-sm object-cover" />
-        <div class="leading-none">
-          <div class="text-xl font-bold tracking-tight">Elara</div>
-          <div class="text-[11px] uppercase tracking-widest text-slate-500">Fits that feel like you</div>
-        </div>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a class="hover:text-rose-600" href="#shop">Shop</a>
-        <a class="hover:text-rose-600" href="#why">Why Elara</a>
-        <a class="hover:text-rose-600" href="#size">Sizes</a>
-        <a class="hover:text-rose-600" href="#faq">FAQ</a>
-        <a class="hover:text-rose-600" href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<!-- Footer -->
+<footer>
+  &copy; 2025 Fashion Store. All rights reserved.
+</footer>
 
-  <!-- HERO -->
-  <section id="top" class="relative overflow-hidden">
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-          Effortless ethnicwear, <span class="text-rose-600">everyday</span>
-        </h1>
-        <p class="mt-4 text-slate-600 text-lg">
-          Minimal yet expressive designs. Premium fabrics for all-day comfort. Inclusive sizing S–XXL.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="https://wa.me/919809452736?text=Hi%20I%20want%20to%20shop%20Short%20Kurtis" target="_blank" class="px-5 py-3 rounded-2xl bg-rose-600 text-white font-medium shadow hover:bg-rose-700">
-            Shop Short Kurtis
-          </a>
-          <a href="#why" class="px-5 py-3 rounded-2xl border border-slate-200 font-medium hover:border-rose-300">Why Elara?</a>
-        </div>
-      </div>
-      <div class="relative">
-        <img src="images/IMG-20250807-WA0002.jpg" alt="Featured Kurti" class="aspect-[4/5] object-cover rounded-3xl shadow-xl border border-white/60" />
-      </div>
-    </div>
-  </section>
+<script>
+  const itemsData = [
+    {
+      img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
+      label: 'FRATINI',
+      discount: 'UP TO 50% OFF'
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=400&q=80',
+      label: 'KASHMIR',
+      discount: 'UP TO 30% OFF'
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80',
+      label: 'KARACHI',
+      discount: 'UP TO 40% OFF'
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80',
+      label: 'PRAYA',
+      discount: 'UP TO 20% OFF'
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1520975690544-7b6e2a6f60bb?auto=format&fit=crop&w=400&q=80',
+      label: 'CURRY',
+      discount: 'UP TO 25% OFF'
+    }
+  ];
 
-  <!-- WHY ELARA -->
-  <section id="why" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    <div class="grid md:grid-cols-4 gap-4">
-      <div class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white">
-        <div class="text-sm text-rose-600 font-semibold">01</div>
-        <div class="mt-2 font-semibold">Minimal yet expressive</div>
-        <div class="text-sm text-slate-600 mt-1">Clean, versatile silhouettes for work to weekend.</div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white">
-        <div class="text-sm text-rose-600 font-semibold">02</div>
-        <div class="mt-2 font-semibold">Premium fabrics</div>
-        <div class="text-sm text-slate-600 mt-1">Soft, breathable blends for all-day comfort.</div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white">
-        <div class="text-sm text-rose-600 font-semibold">03</div>
-        <div class="mt-2 font-semibold">Inclusive sizing</div>
-        <div class="text-sm text-slate-600 mt-1">Thoughtful fits from S to XXL (more coming).</div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white">
-        <div class="text-sm text-rose-600 font-semibold">04</div>
-        <div class="mt-2 font-semibold">Everyday elegance</div>
-        <div class="text-sm text-slate-600 mt-1">Effortless styles with occasional charm.</div>
-      </div>
-    </div>
-  </section>
+  const carousel = document.getElementById('carousel');
+  let centerIndex = 0;
 
-  <!-- SHOP SECTION -->
-  <section id="shop" class="bg-slate-50/60 border-y border-slate-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <!-- Product 1 -->
-        <article class="group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-          <img src="images/IMG-20250807-WA0002.jpg" alt="Short Kurti — Mustard Glow" class="aspect-[4/5] object-cover" />
-          <div class="p-4 flex flex-col flex-grow">
-            <div class="text-lg font-semibold">Short Kurti — Mustard Glow</div>
-            <div class="mt-1 flex items-baseline gap-2">
-              <div class="text-lg font-bold text-rose-600">₹399</div>
-              <div class="text-sm line-through text-slate-400">₹799</div>
-            </div>
+  function renderCarousel() {
+    carousel.innerHTML = '';
+    for (let i = 0; i < itemsData.length; i++) {
+      const item = document.createElement('div');
+      item.className = 'carousel-item';
 
-            <!-- Size select + Shop Now button -->
-            <div class="mt-3 flex items-center gap-2">
-              <select
-                required
-                class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow"
-                aria-label="Select size for Mustard Glow"
-              >
-                <option value="" disabled selected>Choose size</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
-              <button
-                class="rounded-xl bg-rose-600 text-white px-4 py-2 text-sm font-medium hover:bg-rose-700"
-                onclick="shopNow(this, 'Short Kurti — Mustard Glow')"
-              >
-                Shop Now
-              </button>
-            </div>
-          </div>
-        </article>
+      const diff = i - centerIndex;
+      const len = itemsData.length;
 
-        <!-- Product 2 -->
-        <article class="group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-          <img src="images/IMG-20250807-WA0002.jpg" alt="Short Kurti — Coral Peach" class="aspect-[4/5] object-cover" />
-          <div class="p-4 flex flex-col flex-grow">
-            <div class="text-lg font-semibold">Short Kurti — Coral Peach</div>
-            <div class="mt-1 flex items-baseline gap-2">
-              <div class="text-lg font-bold text-rose-600">₹399</div>
-              <div class="text-sm line-through text-slate-400">₹799</div>
-            </div>
-            <div class="mt-3 flex items-center gap-2">
-              <select
-                required
-                class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow"
-                aria-label="Select size for Coral Peach"
-              >
-                <option value="" disabled selected>Choose size</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
-              <button
-                class="rounded-xl bg-rose-600 text-white px-4 py-2 text-sm font-medium hover:bg-rose-700"
-                onclick="shopNow(this, 'Short Kurti — Coral Peach')"
-              >
-                Shop Now
-              </button>
-            </div>
-          </div>
-        </article>
+      // Handle circular difference for left and right positions
+      let posDiff = diff;
+      if (diff > len / 2) posDiff = diff - len;
+      if (diff < -len / 2) posDiff = diff + len;
 
-        <!-- Product 3 -->
-        <article class="group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-          <img src="images/IMG-20250807-WA0002.jpg" alt="Short Kurti — Navy Bloom" class="aspect-[4/5] object-cover" />
-          <div class="p-4 flex flex-col flex-grow">
-            <div class="text-lg font-semibold">Short Kurti — Navy Bloom</div>
-            <div class="mt-1 flex items-baseline gap-2">
-              <div class="text-lg font-bold text-rose-600">₹399</div>
-              <div class="text-sm line-through text-slate-400">₹799</div>
-            </div>
-            <div class="mt-3 flex items-center gap-2">
-              <select
-                required
-                class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow"
-                aria-label="Select size for Navy Bloom"
-              >
-                <option value="" disabled selected>Choose size</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
-              <button
-                class="rounded-xl bg-rose-600 text-white px-4 py-2 text-sm font-medium hover:bg-rose-700"
-                onclick="shopNow(this, 'Short Kurti — Navy Bloom')"
-              >
-                Shop Now
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Product 4 -->
-        <article class="group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-          <img src="images/IMG-20250807-WA0002.jpg" alt="Short Kurti — Olive Charm" class="aspect-[4/5] object-cover" />
-          <div class="p-4 flex flex-col flex-grow">
-            <div class="text-lg font-semibold">Short Kurti — Olive Charm</div>
-            <div class="mt-1 flex items-baseline gap-2">
-              <div class="text-lg font-bold text-rose-600">₹399</div>
-              <div class="text-sm line-through text-slate-400">₹799</div>
-            </div>
-            <div class="mt-3 flex items-center gap-2">
-              <select
-                required
-                class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow"
-                aria-label="Select size for Olive Charm"
-              >
-                <option value="" disabled selected>Choose size</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
-              <button
-                class="rounded-xl bg-rose-600 text-white px-4 py-2 text-sm font-medium hover:bg-rose-700"
-                onclick="shopNow(this, 'Short Kurti — Olive Charm')"
-              >
-                Shop Now
-              </button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- SIZE CHART -->
-  <section id="size" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    <div class="rounded-3xl bg-white border border-slate-100 p-6 shadow-sm">
-      <h3 class="text-xl font-bold mb-4">Find your perfect fit</h3>
-      <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center text-sm">
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">S</div>
-          <div class="text-[11px] text-slate-500">Bust: 34 in / 86 cm</div>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">M</div>
-          <div class="text-[11px] text-slate-500">Bust: 36 in / 91 cm</div>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">L</div>
-          <div class="text-[11px] text-slate-500">Bust: 38 in / 97 cm</div>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">XL</div>
-          <div class="text-[11px] text-slate-500">Bust: 40 in / 102 cm</div>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">XXL</div>
-          <div class="text-[11px] text-slate-500">Bust: 42 in / 107 cm</div>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">3XL</div>
-          <div class="text-[11px] text-slate-500">Bust: 44 in / 112 cm</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ SECTION -->
-  <section id="faq" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    <h2 class="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
-    <div class="space-y-4 max-w-3xl mx-auto">
-      <details class="border rounded-xl p-4 bg-white shadow-sm">
-        <summary class="cursor-pointer font-semibold text-rose-600">What is the return policy?</summary>
-        <p class="mt-2 text-slate-600 text-sm">We offer easy returns within 7 days of delivery if you're not satisfied.</p>
-      </details>
-      <details class="border rounded-xl p-4 bg-white shadow-sm">
-        <summary class="cursor-pointer font-semibold text-rose-600">Do you offer cash on delivery?</summary>
-        <p class="mt-2 text-slate-600 text-sm">Yes, we offer cash on delivery for orders within India.</p>
-      </details>
-      <details class="border rounded-xl p-4 bg-white shadow-sm">
-        <summary class="cursor-pointer font-semibold text-rose-600">How long does shipping take?</summary>
-        <p class="mt-2 text-slate-600 text-sm">Shipping typically takes 3-5 business days.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 py-12 text-center text-slate-600 text-sm">
-    <h2 class="text-2xl font-bold mb-6 text-rose-600">Get in Touch</h2>
-    <p>Email: <a href="mailto:fitsbyelara@gmail.com" class="text-rose-600 hover:underline">fitsbyelara@gmail.com</a></p>
-    <p>Phone: <a href="tel:+919809452736" class="text-rose-600 hover:underline">+91 98094 52736</a></p>
-    <p class="mt-4">Follow us on social media:</p>
-    <div class="flex justify-center gap-6 mt-2">
-      <a href="https://www.instagram.com/fitsbyelara" target="_blank" class="text-rose-600 hover:text-rose-800" aria-label="Instagram">
-        Instagram
-      </a>
-      <a href="https://www.facebook.com/fitsbyelara" target="_blank" class="text-rose-600 hover:text-rose-800" aria-label="Facebook">
-        Facebook
-      </a>
-      <a href="https://wa.me/919809452736" target="_blank" class="text-rose-600 hover:text-rose-800" aria-label="WhatsApp">
-        WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-slate-100 border-t border-slate-200 py-6 text-center text-slate-500 text-xs max-w-6xl mx-auto px-4 sm:px-6">
-    <p>© 2025 FitsByElara. All rights reserved.</p>
-    <p class="mt-1">Designed with ❤️ by FitsByElara Team</p>
-  </footer>
-
-  <!-- SCRIPT -->
-  <script>
-    function shopNow(button, productName) {
-      const container = button.closest('article');
-      const select = container.querySelector('select');
-
-      if (!select.value) {
-        alert('Please select a size before proceeding.');
-        select.focus();
-        return;
+      switch(posDiff) {
+        case 0:
+          item.classList.add('center');
+          break;
+        case -1:
+          item.classList.add('left1');
+          break;
+        case -2:
+          item.classList.add('left2');
+          break;
+        case 1:
+          item.classList.add('right1');
+          break;
+        case 2:
+          item.classList.add('right2');
+          break;
+        default:
+          item.style.opacity = '0';
+          item.style.pointerEvents = 'none';
       }
 
-      const size = select.value;
-      const phoneNumber = '919809452736';
-      const message = encodeURIComponent(`I need this product: ${productName} with size: ${size}`);
-      const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-
-      window.open(whatsappURL, '_blank');
+      item.style.backgroundImage = `url(${itemsData[i].img})`;
+      item.innerHTML = `
+        <div class="label">${itemsData[i].label}</div>
+        <div class="discount">${itemsData[i].discount}</div>
+      `;
+      carousel.appendChild(item);
     }
-  </script>
+  }
+
+  document.getElementById('prev').addEventListener('click', () => {
+    centerIndex = (centerIndex - 1 + itemsData.length) % itemsData.length;
+    renderCarousel();
+  });
+
+  document.getElementById('next').addEventListener('click', () => {
+    centerIndex = (centerIndex + 1) % itemsData.length;
+    renderCarousel();
+  });
+
+  // Initial render
+  renderCarousel();
+
+  // Shop Now button logic
+  const shopNowBtn = document.getElementById('shopNowBtn');
+  const sizeSelect = document.getElementById('sizeSelect');
+
+  shopNowBtn.addEventListener('click', () => {
+    const selectedSize = sizeSelect.value;
+    if (!selectedSize) {
+      alert('Please select a size before proceeding.');
+      return;
+    }
+    const product = itemsData[centerIndex].label;
+    alert(`I need this product (${product}) with selected size: ${selectedSize}`);
+  });
+
+  // Help Me button logic
+  const helpMeBtn = document.getElementById('helpMeBtn');
+  helpMeBtn.addEventListener('click', () => {
+    alert('Our support team will contact you shortly to assist with your queries. Thank you!');
+  });
+</script>
+
 </body>
 </html>
