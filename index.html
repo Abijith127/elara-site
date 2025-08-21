@@ -142,17 +142,18 @@
     </section>
 
   <!-- SHOP SECTION -->
-  <section class="px-4 py-16 max-w-7xl mx-auto">
-  <h2 class="text-3xl font-bold text-[#632C1A] mb-8 text-center">Shop our collection</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-    
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+  <h2 class="text-center text-2xl font-semibold text-[#632C1A] mb-8">Shop our collection</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
     <!-- Product Card 1 -->
     <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
       <!-- NEW Ribbon -->
-      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md z-10">New</span>
+      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
 
       <!-- Product Image -->
-      <img src="images/IMG-20250807-WA0002.jpg" alt="Short Kurti — Mustard Glow" class="aspect-[4/5] object-cover" />
+      <img src="images/images/Product_2.jpg" alt="Short Kurti — Mustard Glow" class="aspect-[4/5] object-cover" />
 
       <!-- Product Info -->
       <div class="p-4 flex flex-col flex-grow">
@@ -170,7 +171,7 @@
             <option value="XL">XL</option>
             <option value="XXL">XXL</option>
           </select>
-          <button class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all" onclick="shopNow(this, 'Short Kurti — Mustard Glow')">Shop Now</button>
+          <button class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all" onclick="shopNow()">Shop Now</button>
         </div>
       </div>
     </article>
@@ -178,10 +179,10 @@
     <!-- Product Card 2 -->
     <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
       <!-- NEW Ribbon -->
-      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md z-10">New</span>
+      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
 
       <!-- Product Image -->
-      <img src="images/IMG-20250807-WA0005.jpg" alt="Kurtas & Kurtis — Red Boxy" class="aspect-[4/5] object-cover" />
+      <img src="images/Product_2.jpg" alt="Kurtas & Kurtis — Red Boxy" class="aspect-[4/5] object-cover" />
 
       <!-- Product Info -->
       <div class="p-4 flex flex-col flex-grow">
@@ -199,7 +200,7 @@
             <option value="XL">XL</option>
             <option value="XXL">XXL</option>
           </select>
-          <button class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all" onclick="shopNow(this, 'Kurtas & Kurtis — Red Boxy')">Shop Now</button>
+          <button class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all" onclick="shopNow()">Shop Now</button>
         </div>
       </div>
     </article>
@@ -207,10 +208,10 @@
     <!-- Product Card 3 -->
     <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
       <!-- NEW Ribbon -->
-      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md z-10">New</span>
+      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
 
       <!-- Product Image -->
-      <img src="images/IMG-20250807-WA0003.jpg" alt="Kurtas & Kurtis — Black Diamond" class="aspect-[4/5] object-cover" />
+      <img src="images/Product_2.jpg" alt="Kurtas & Kurtis — Black Diamond" class="aspect-[4/5] object-cover" />
 
       <!-- Product Info -->
       <div class="p-4 flex flex-col flex-grow">
@@ -228,23 +229,19 @@
             <option value="XL">XL</option>
             <option value="XXL">XXL</option>
           </select>
-          <button class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all" onclick="shopNow(this, 'Kurtas & Kurtis — Black Diamond')">Shop Now</button>
+          <button class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all" onclick="shopNow()">Shop Now</button>
         </div>
       </div>
     </article>
-
-    <!-- Add more product cards similarly -->
 
   </div>
 </section>
 
 <script>
-  function shopNow(button, productName) {
-    alert(`You selected: ${productName}`);
-    // You can extend this function to add items to cart or redirect
+  function shopNow() {
+    alert("Shop Now clicked!");
   }
 </script>
-
 
     <!-- SIZE CHART -->
   <section id="size" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
