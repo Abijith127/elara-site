@@ -79,41 +79,48 @@
     </section>
     
 <!-- STACKED IMAGES SECTION -->
-<section class="relative z-10 py-20 bg-[#f9f6f4] overflow-hidden">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#632C1A]">A Glimpse of Elara</h2>
-      <p class="mt-2 text-[#A57D60]">Elevated simplicity in every piece</p>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+  <div class="relative rounded-3xl bg-[#A57D60] text-white flex items-center justify-center p-8 shadow-lg overflow-hidden banner-animation">
+    <div class="z-10 text-center">
+      <h2 class="text-4xl md:text-5xl font-extrabold drop-shadow-lg mb-2">🔥 Grab 3 at <span class="text-[#632C1A]">₹799</span> 🔥</h2>
+      <p class="text-lg md:text-xl font-semibold">Mix & Match Your Favorite Kurtis & Kurtas</p>
+      <button class="mt-6 px-8 py-3 bg-[#632C1A] hover:bg-[#4e2213] rounded-xl font-semibold text-white transition duration-300" onclick="shopNow()">
+        Shop Now
+      </button>
     </div>
 
-    <!-- Image stack container -->
-    <div class="relative w-full flex justify-center items-center h-[500px] sm:h-[600px]">
-      <!-- Image 1 (bottom) -->
-      <div class="absolute transform rotate-[-6deg] z-10 hover:scale-105 transition duration-500 ease-in-out shadow-xl">
-        <div class="bg-[#f2f1ed] rounded-2xl p-3">
-          <img src="images/IMG-20250807-WA0002.jpg" alt="Elara" class="w-64 sm:w-72 md:w-80 rounded-xl" />
-          <p class="mt-2 text-center text-[#632C1A] font-semibold text-sm">Elara</p>
-        </div>
-      </div>
-
-      <!-- Image 2 (middle) -->
-      <div class="absolute transform rotate-[0deg] z-20 hover:scale-105 transition duration-500 ease-in-out shadow-2xl">
-        <div class="bg-[#f2f1ed] rounded-2xl p-3">
-          <img src="images/Product_2.jpg" alt="Elara" class="w-64 sm:w-72 md:w-80 rounded-xl" />
-          <p class="mt-2 text-center text-[#632C1A] font-semibold text-sm">Elara</p>
-        </div>
-      </div>
-
-      <!-- Image 3 (top) -->
-      <div class="absolute transform rotate-[6deg] z-30 hover:scale-105 transition duration-500 ease-in-out shadow-xl">
-        <div class="bg-[#f2f1ed] rounded-2xl p-3">
-          <img src="images/Product_2.jpg" alt="Elara" class="w-64 sm:w-72 md:w-80 rounded-xl" />
-          <p class="mt-2 text-center text-[#632C1A] font-semibold text-sm">Elara</p>
-        </div>
-      </div>
-    </div>
+    <!-- Animated moving circles -->
+    <span class="absolute -top-10 -left-10 w-40 h-40 bg-[#632C1A] rounded-full opacity-40 animate-pulse-slow"></span>
+    <span class="absolute bottom-0 right-0 w-60 h-60 bg-[#4e2213] rounded-full opacity-30 animate-pulse-slower"></span>
   </div>
 </section>
+
+<style>
+  /* Custom slower pulse animations */
+  @keyframes pulse-slow {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+  }
+  @keyframes pulse-slower {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.3); opacity: 0.5; }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+  }
+  .animate-pulse-slower {
+    animation: pulse-slower 8s ease-in-out infinite;
+  }
+</style>
+
+<script>
+  function shopNow() {
+    alert('Redirecting to shop!');
+    // Replace this alert with your actual shop redirect logic
+  }
+</script>
+
     
     <!-- WHY ELARA -->
     <section id="why" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
