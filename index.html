@@ -212,14 +212,23 @@
 
   <div class="banner">
     <!-- Floating animated circles -->
-    <div class="circle circle1"></div>
-    <div class="circle circle2"></div>
-    <div class="circle circle3"></div>
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
 
-    <h1>Grab 3 at ₹999</h1>
-    <p>Mix & Match Your Favorite Kurtis & Kurtas</p>
-    <button>Shop Now</button>
-  </div>
+  <h1>Grab 3 at ₹999</h1>
+  <p>Mix & Match Your Favorite Kurtis & Kurtas</p>
+  <button onclick="redirectToWhatsApp()">Shop Now</button>
+</div>
+  <script>
+  function redirectToWhatsApp() {
+    const phone = "919809452736";
+    const message = "Hi! I’m interested in the *3 for ₹999* offer. Can you help me order?";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+</script>
+
 
 </body>
 </html>
@@ -408,4 +417,5 @@
     window.open(url, '_blank');
   }
 </script>
+    
 
