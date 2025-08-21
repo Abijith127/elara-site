@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="relative">
-          <img src="images/Hero Banner.jpg" alt="Featured Kurti" class="aspect-[4/5] object-cover rounded-3xl shadow-xl border border-white/60" />
+          <img src="images/images/Beige and White Photocentric Fashion Spring Promotion Banner.png" alt="Featured Kurti" class="aspect-[4/5] object-cover rounded-3xl shadow-xl border border-white/60" />
         </div>
       </div>
     </section>
@@ -128,6 +128,87 @@
     // Add your actual redirect code here
   }
 </script>
+    
+    // 3d animation
+    
+    <style>
+  @keyframes text3D {
+    0%, 100% {
+      text-shadow:
+        2px 2px 4px rgba(84, 47, 22, 0.8),
+        4px 4px 6px rgba(130, 72, 30, 0.5),
+        6px 6px 8px rgba(180, 97, 44, 0.3);
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+      text-shadow:
+        4px 4px 6px rgba(84, 47, 22, 0.9),
+        8px 8px 12px rgba(130, 72, 30, 0.6),
+        12px 12px 16px rgba(180, 97, 44, 0.4);
+      transform: rotateX(5deg) rotateY(5deg);
+    }
+  }
+
+  .banner {
+    background-color: #a37f62;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 90vw;
+    margin: 0 auto 40px auto;
+  }
+
+  .banner h1 {
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: #4e2310;
+    animation: text3D 4s ease-in-out infinite;
+    margin-bottom: 10px;
+  }
+
+  .banner p {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .banner button {
+    background-color: #4e2310;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(78, 35, 16, 0.6);
+    transition: background-color 0.3s ease;
+  }
+
+  .banner button:hover {
+    background-color: #6b2e11;
+  }
+
+  @media (max-width: 600px) {
+    .banner h1 {
+      font-size: 2rem;
+    }
+    .banner p {
+      font-size: 1rem;
+    }
+    .banner button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<div class="banner">
+  <h1>Grab 3 at ₹999</h1>
+  <p>Mix & Match Your Favorite Kurtis & Kurtas</p>
+  <button>Shop Now</button>
+</div>
+
 
     
     <!-- WHY ELARA -->
