@@ -4,20 +4,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FitsByElara — Effortless Ethnicwear</title>
-    <meta name="description" content="Short Kurtis at ₹399. Minimal yet expressive designs. Inclusive sizes S–XXL. COD, fast shipping, easy returns." />
-    <link rel="icon" href="images/Screenshot_20250813_011123_OneDrive.jpg" />
+    <meta
+      name="description"
+      content="Short Kurtis at ₹399. Minimal yet expressive designs. Inclusive sizes S–XXL. COD, fast shipping, easy returns."
+    />
+    <link
+      rel="icon"
+      href="images/Screenshot_20250813_011123_OneDrive.jpg"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Arial", "sans-serif"],
+              sans: [
+                "Inter",
+                "system-ui",
+                "-apple-system",
+                "Segoe UI",
+                "Roboto",
+                "Arial",
+                "sans-serif",
+              ],
             },
             colors: {
-              primary: '#632C1A',
-              accent: '#A57D60',
-            }
+              primary: "#632C1A",
+              accent: "#A57D60",
+            },
           },
         },
       };
@@ -26,22 +40,158 @@
       html {
         scroll-behavior: smooth;
       }
+      /* Banner CSS from stacked images section */
+      .banner {
+        position: relative;
+        background-color: #a37f62;
+        border-radius: 20px;
+        padding: 30px 20px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        max-width: 90vw;
+        margin: 20px auto 40px auto;
+        overflow: hidden;
+        color: white;
+      }
+
+      /* Animated floating circles */
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(78, 35, 16, 0.3);
+        filter: blur(15px);
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+      }
+
+      .circle1 {
+        width: 120px;
+        height: 120px;
+        top: 10%;
+        left: 15%;
+        animation-name: floatUpDown;
+        animation-duration: 6s;
+      }
+
+      .circle2 {
+        width: 180px;
+        height: 180px;
+        top: 50%;
+        right: 10%;
+        animation-name: floatLeftRight;
+        animation-duration: 8s;
+      }
+
+      .circle3 {
+        width: 100px;
+        height: 100px;
+        bottom: 15%;
+        left: 50%;
+        animation-name: floatUpDown;
+        animation-duration: 7s;
+        animation-delay: 2s;
+      }
+
+      /* Keyframes for floating animations */
+      @keyframes floatUpDown {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.35;
+        }
+        50% {
+          transform: translateY(-20px);
+          opacity: 0.6;
+        }
+      }
+
+      @keyframes floatLeftRight {
+        0%,
+        100% {
+          transform: translateX(0);
+          opacity: 0.35;
+        }
+        50% {
+          transform: translateX(25px);
+          opacity: 0.6;
+        }
+      }
+
+      /* Banner text */
+      .banner h1 {
+        font-weight: 900;
+        font-size: 2.8rem;
+        color: #4e2310;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .banner p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .banner button {
+        background-color: #4e2310;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 12px 28px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 5px 10px rgba(78, 35, 16, 0.6);
+        transition: background-color 0.3s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      .banner button:hover {
+        background-color: #6b2e11;
+      }
+
+      @media (max-width: 600px) {
+        .banner h1 {
+          font-size: 2rem;
+        }
+        .banner p {
+          font-size: 1rem;
+        }
+        .banner button {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+      }
     </style>
   </head>
   <body class="bg-white text-slate-900">
     <!-- Top Offer Banner -->
-    <div class="w-full bg-primary text-white text-center text-xs sm:text-sm py-2">
+    <div
+      class="w-full bg-primary text-white text-center text-xs sm:text-sm py-2"
+    >
       ✨ Flat Sale — Short Kurtis at ₹399 (MRP ₹599) • Free Shipping over ₹999
     </div>
 
     <!-- HEADER -->
-    <header class="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-100">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+    <header
+      class="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-100"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between"
+      >
         <a href="#top" class="flex items-center gap-2">
-          <img src="images/Screenshot_20250813_011123_OneDrive.jpg" alt="Elara Logo" class="w-9 h-9 rounded-xl shadow-sm object-cover" />
+          <img
+            src="images/Screenshot_20250813_011123_OneDrive.jpg"
+            alt="Elara Logo"
+            class="w-9 h-9 rounded-xl shadow-sm object-cover"
+          />
           <div class="leading-none">
             <div class="text-xl font-bold tracking-tight text-primary">Elara</div>
-            <div class="text-[11px] uppercase tracking-widest text-slate-500">Fits that feel like you</div>
+            <div class="text-[11px] uppercase tracking-widest text-slate-500">
+              Fits that feel like you
+            </div>
           </div>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm">
@@ -54,374 +204,268 @@
     </header>
 
     <!-- HERO -->
-    <section id="top" class="relative overflow-hidden">
-      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 grid md:grid-cols-2 gap-10 items-center">
+    <section
+      id="top"
+      class="relative overflow-hidden"
+    >
+      <div
+        class="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 grid md:grid-cols-2 gap-10 items-center"
+      >
         <div>
           <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
             Effortless ethnicwear, <span class="text-primary">everyday</span>
           </h1>
           <p class="mt-4 text-slate-600 text-lg">
-            Minimal yet expressive designs. Premium fabrics for all-day comfort. Inclusive sizing S–XXL.
+            Minimal yet expressive designs. Premium fabrics for all-day comfort.
+            Inclusive sizing S–XXL.
           </p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="https://wa.me/919809452736?text=Hi%20I%20want%20to%20shop%20Short%20Kurtis" target="_blank" class="px-5 py-3 rounded-2xl bg-primary text-white font-medium shadow hover:bg-[#532310]">
-              Shop Short Kurtis
-            </a>
-            <a href="#why" class="px-5 py-3 rounded-2xl border border-slate-200 font-medium hover:border-accent">
-              Why Elara?
-            </a>
+            <a
+              href="https://wa.me/919809452736?text=Hi%20I%20want%20to%20shop%20Short%20Kurtis"
+              target="_blank"
+              class="px-5 py-3 rounded-2xl bg-primary text-white font-medium shadow hover:bg-[#532310]"
+              >Shop Short Kurtis</a
+            >
+            <a
+              href="#why"
+              class="px-5 py-3 rounded-2xl border border-slate-200 font-medium hover:border-accent"
+              >Why Elara?</a
+            >
           </div>
         </div>
         <div class="relative">
-          <img src="images/Beige and White Photocentric Fashion Spring Promotion Banner.png" alt="Featured Kurti" class="aspect-[4/5] object-cover rounded-3xl shadow-xl border border-white/60" />
+          <img
+            src="images/Beige and White Photocentric Fashion Spring Promotion Banner.png"
+            alt="Featured Kurti"
+            class="aspect-[4/5] object-cover rounded-3xl shadow-xl border border-white/60"
+          />
         </div>
       </div>
     </section>
-    
-<!-- STACKED IMAGES SECTION -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Animated Banner with Moving Elements</title>
-<style>
-  .banner {
-    position: relative;
-    background-color: #a37f62;
-    border-radius: 20px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    max-width: 90vw;
-    margin: 20px auto 40px auto;
-    overflow: hidden;
-    color: white;
-  }
 
-  /* Animated floating circles */
-  .circle {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(78, 35, 16, 0.3);
-    filter: blur(15px);
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-  }
+    <!-- STACKED IMAGES BANNER -->
+    <div class="banner">
+      <!-- Floating animated circles -->
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
 
-  .circle1 {
-    width: 120px;
-    height: 120px;
-    top: 10%;
-    left: 15%;
-    animation-name: floatUpDown;
-    animation-duration: 6s;
-  }
+      <h1>Grab 3 at ₹999</h1>
+      <p>Mix & Match Your Favorite Kurtis & Kurtas</p>
+      <button
+        onclick="window.open('https://wa.me/919809452736?text=Hi%2C%20I%27m%20interested%20in%20the%203%20at%20₹999%20offer.%20Can%20you%20help%20me%20place%20the%20order%3F', '_blank')"
+      >
+        Shop Now
+      </button>
+    </div>
 
-  .circle2 {
-    width: 180px;
-    height: 180px;
-    top: 50%;
-    right: 10%;
-    animation-name: floatLeftRight;
-    animation-duration: 8s;
-  }
-
-  .circle3 {
-    width: 100px;
-    height: 100px;
-    bottom: 15%;
-    left: 50%;
-    animation-name: floatUpDown;
-    animation-duration: 7s;
-    animation-delay: 2s;
-  }
-
-  /* Keyframes for floating animations */
-  @keyframes floatUpDown {
-    0%, 100% {
-      transform: translateY(0);
-      opacity: 0.35;
-    }
-    50% {
-      transform: translateY(-20px);
-      opacity: 0.6;
-    }
-  }
-
-  @keyframes floatLeftRight {
-    0%, 100% {
-      transform: translateX(0);
-      opacity: 0.35;
-    }
-    50% {
-      transform: translateX(25px);
-      opacity: 0.6;
-    }
-  }
-
-  /* Banner text */
-  .banner h1 {
-    font-weight: 900;
-    font-size: 2.8rem;
-    color: #4e2310;
-    margin-bottom: 10px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .banner p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .banner button {
-    background-color: #4e2310;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 12px 28px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(78, 35, 16, 0.6);
-    transition: background-color 0.3s ease;
-    position: relative;
-    z-index: 2;
-  }
-
-  .banner button:hover {
-    background-color: #6b2e11;
-  }
-
-  @media (max-width: 600px) {
-    .banner h1 {
-      font-size: 2rem;
-    }
-    .banner p {
-      font-size: 1rem;
-    }
-    .banner button {
-      padding: 10px 20px;
-      font-size: 0.9rem;
-    }
-  }
-</style>
-</head>
-<body>
-
-  <div class="banner">
-    <!-- Floating animated circles -->
-    <div class="circle circle1"></div>
-    <div class="circle circle2"></div>
-    <div class="circle circle3"></div>
-
-    <h1>Grab 3 at ₹999</h1>
-    <p>Mix & Match Your Favorite Kurtis & Kurtas</p>
-    <button>Shop Now</button>
-  </div>
-
-</body>
-</html>
-    
     <!-- WHY ELARA -->
     <section id="why" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
       <div class="grid md:grid-cols-4 gap-4">
-        <div class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white">
+        <div
+          class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white"
+        >
           <div class="text-sm text-primary font-semibold">01</div>
           <div class="mt-2 font-semibold">Minimal yet expressive</div>
-          <div class="text-sm text-slate-600 mt-1">Clean, versatile silhouettes for work to weekend.</div>
+          <div class="text-sm text-slate-600 mt-1">
+            Clean, versatile silhouettes for work to weekend.
+          </div>
         </div>
-        <div class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white">
+        <div
+          class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white"
+        >
           <div class="text-sm text-primary font-semibold">02</div>
           <div class="mt-2 font-semibold">Premium fabrics</div>
-          <div class="text-sm text-slate-600 mt-1">Soft, breathable blends for all-day comfort.</div>
+          <div class="text-sm text-slate-600 mt-1">
+            Soft, breathable blends for all-day comfort.
+          </div>
         </div>
-        <div class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white">
+        <div
+          class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white"
+        >
           <div class="text-sm text-primary font-semibold">03</div>
           <div class="mt-2 font-semibold">Inclusive sizing</div>
-          <div class="text-sm text-slate-600 mt-1">Thoughtful fits from S to XXL (more coming).</div>
+          <div class="text-sm text-slate-600 mt-1">
+            Thoughtful fits from S to XXL (more coming).
+          </div>
         </div>
-        <div class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white">
+        <div
+          class="rounded-2xl border border-slate-100 p-5 shadow-sm bg-white"
+        >
           <div class="text-sm text-primary font-semibold">04</div>
           <div class="mt-2 font-semibold">Everyday elegance</div>
-          <div class="text-sm text-slate-600 mt-1">Effortless styles with occasional charm.</div>
+          <div class="text-sm text-slate-600 mt-1">
+            Effortless styles with occasional charm.
+          </div>
         </div>
       </div>
     </section>
 
-  <!-- SHOP SECTION -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-  <h2 class="text-center text-2xl font-semibold text-[#632C1A] mb-8">Shop our collection</h2>
+    <!-- SHOP SECTION -->
+    <section
+      id="shop"
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12"
+    >
+      <h2
+        class="text-center text-2xl font-semibold text-[#632C1A] mb-8"
+      >
+        Shop our collection
+      </h2>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Product Card 1 -->
+        <article
+          class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col"
+        >
+          <!-- NEW Ribbon -->
+          <span
+            class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md"
+            >NEW</span
+          >
 
-    <!-- Product Card 1 -->
-    <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-      <!-- NEW Ribbon -->
-      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
+          <!-- Product Image -->
+          <img
+            src="images/Product1.jpg"
+            alt="Elegant Kurti 1"
+            loading="lazy"
+            class="aspect-[4/5] w-full object-cover rounded-t-3xl group-hover:scale-[1.03] transition-transform duration-300"
+          />
 
-      <!-- Product Image -->
-      <img src="images/Product_2.jpg" alt="Kurtas & Kurtis — Red Boxy" class="aspect-[4/5] object-cover" />
+          <!-- Product Info -->
+          <div class="flex flex-col flex-grow p-5">
+            <h3 class="text-lg font-semibold text-primary">Elegant Kurti 1</h3>
+            <p class="mt-1 text-slate-600 flex-grow">
+              Beautiful cotton kurti with minimal design.
+            </p>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-lg font-bold text-primary">₹399</span>
+              <button
+                class="inline-block bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:bg-[#532310]"
+                onclick="shopNow('Elegant Kurti 1')"
+              >
+                Shop Now
+              </button>
+            </div>
+          </div>
+        </article>
 
-      <!-- Product Info -->
-      <div class="p-4 flex flex-col flex-grow">
-        <div class="text-lg font-semibold text-[#632C1A]">Short Kurti — Mustard Glow</div>
-        <div class="mt-1 flex items-baseline gap-2">
-          <div class="text-lg font-bold text-[#A57D60]">₹399</div>
-          <div class="text-sm line-through text-slate-400">₹799</div>
-        </div>
-        <div class="mt-3 flex items-center gap-2">
-          <select required class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow">
-            <option value="" disabled selected>Choose size</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
-          </select>
-          <button class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all" onclick="shopNow()">Shop Now</button>
-        </div>
-      </div>
-    </article>
+        <!-- Product Card 2 -->
+        <article
+          class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col"
+        >
+          <span
+            class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md"
+            >NEW</span
+          >
+          <img
+            src="images/Product2.jpg"
+            alt="Elegant Kurti 2"
+            loading="lazy"
+            class="aspect-[4/5] w-full object-cover rounded-t-3xl group-hover:scale-[1.03] transition-transform duration-300"
+          />
+          <div class="flex flex-col flex-grow p-5">
+            <h3 class="text-lg font-semibold text-primary">Elegant Kurti 2</h3>
+            <p class="mt-1 text-slate-600 flex-grow">
+              Soft breathable blend, perfect for summer.
+            </p>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-lg font-bold text-primary">₹399</span>
+              <button
+                class="inline-block bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:bg-[#532310]"
+                onclick="shopNow('Elegant Kurti 2')"
+              >
+                Shop Now
+              </button>
+            </div>
+          </div>
+        </article>
 
-    <!-- Product Card 2 -->
-    <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-      <!-- NEW Ribbon -->
-      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
-
-      <!-- Product Image -->
-      <img src="images/Product_2.jpg" alt="Kurtas & Kurtis — Red Boxy" class="aspect-[4/5] object-cover" />
-
-      <!-- Product Info -->
-      <div class="p-4 flex flex-col flex-grow">
-        <div class="text-lg font-semibold text-[#632C1A]">Kurtas & Kurtis — Red Boxy</div>
-        <div class="mt-1 flex items-baseline gap-2">
-          <div class="text-lg font-bold text-[#A57D60]">₹499</div>
-          <div class="text-sm line-through text-slate-400">₹899</div>
-        </div>
-        <div class="mt-3 flex items-center gap-2">
-          <select required class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow">
-            <option value="" disabled selected>Choose size</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
-          </select>
-          <button class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all" onclick="shopNow()">Shop Now</button>
-        </div>
-      </div>
-    </article>
-
-    <!-- Product Card 3 -->
-    <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-      <!-- NEW Ribbon -->
-      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
-
-      <!-- Product Image -->
-      <img src="images/Product_2.jpg" alt="Kurtas & Kurtis — Black Diamond" class="aspect-[4/5] object-cover" />
-
-      <!-- Product Info -->
-      <div class="p-4 flex flex-col flex-grow">
-        <div class="text-lg font-semibold text-[#632C1A]">Kurtas & Kurtis — Black Diamond</div>
-        <div class="mt-1 flex items-baseline gap-2">
-          <div class="text-lg font-bold text-[#A57D60]">₹599</div>
-          <div class="text-sm line-through text-slate-400">₹999</div>
-        </div>
-        <div class="mt-3 flex items-center gap-2">
-          <select required class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow">
-            <option value="" disabled selected>Choose size</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
-          </select>
-          <button class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all" onclick="shopNow()">Shop Now</button>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<script>
-  function shopNow() {
-    alert("Shop Now clicked!");
-  }
-</script>
-
-    <!-- SIZE CHART -->
-  <section id="size" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    <div class="rounded-3xl bg-white border border-slate-100 p-6 shadow-sm">
-      <h3 class="text-xl font-bold mb-4">Find your perfect fit</h3>
-      <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center text-sm">
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">S</div>
-          <div class="text-[11px] text-slate-500">Bust: 34 in / 86 cm</div>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">M</div>
-          <div class="text-[11px] text-slate-500">Bust: 36 in / 91 cm</div>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">L</div>
-          <div class="text-[11px] text-slate-500">Bust: 38 in / 97 cm</div>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">XL</div>
-          <div class="text-[11px] text-slate-500">Bust: 40 in / 102 cm</div>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">XXL</div>
-          <div class="text-[11px] text-slate-500">Bust: 42 in / 107 cm</div>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-2">
-          <div class="font-semibold">3XL</div>
-          <div class="text-[11px] text-slate-500">Bust: 44 in / 112 cm</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center bg-accent/10 rounded-3xl shadow-md">
-      <h2 class="text-3xl font-extrabold mb-6 text-primary">Connect With Us</h2>
-      <p class="mb-2">📧 <a href="mailto:fitsbyelara@gmail.com" class="text-primary font-medium hover:underline">fitsbyelara@gmail.com</a></p>
-      <p>📱 <a href="tel:+919809452736" class="text-primary font-medium hover:underline">+91 98094 52736</a></p>
-      <p class="mt-6 font-medium text-slate-700">Follow us on</p>
-      <div class="flex justify-center gap-8 mt-4 text-lg font-semibold">
-        <a href="https://www.instagram.com/fitsbyelara" target="_blank" class="text-primary hover:text-[#532310]">Instagram</a>
-        <a href="https://www.facebook.com/fitsbyelara" target="_blank" class="text-primary hover:text-[#532310]">Facebook</a>
-        <a href="https://wa.me/919809452736" target="_blank" class="text-primary hover:text-[#532310]">WhatsApp</a>
+        <!-- Product Card 3 -->
+        <article
+          class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col"
+        >
+          <span
+            class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md"
+            >NEW</span
+          >
+          <img
+            src="images/Product3.jpg"
+            alt="Elegant Kurti 3"
+            loading="lazy"
+            class="aspect-[4/5] w-full object-cover rounded-t-3xl group-hover:scale-[1.03] transition-transform duration-300"
+          />
+          <div class="flex flex-col flex-grow p-5">
+            <h3 class="text-lg font-semibold text-primary">Elegant Kurti 3</h3>
+            <p class="mt-1 text-slate-600 flex-grow">
+              Lightweight fabric with stylish cuts.
+            </p>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-lg font-bold text-primary">₹399</span>
+              <button
+                class="inline-block bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:bg-[#532310]"
+                onclick="shopNow('Elegant Kurti 3')"
+              >
+                Shop Now
+              </button>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-100 border-t border-slate-200 py-6 text-center text-slate-500 text-xs max-w-6xl mx-auto px-4 sm:px-6">
-      <p>© 2025 FitsByElara. All rights reserved.</p>
-      <p class="mt-1">Designed with ❤️ by FitsByElara Team</p>
-    </footer>
+    <!-- SIZES -->
+    <section id="size" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <h2 class="text-2xl font-semibold text-primary mb-8 text-center">
+        Sizes We Offer
+      </h2>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center text-slate-700 font-medium"
+      >
+        <div class="p-3 rounded-lg bg-white shadow-sm border border-slate-200">
+          S
+        </div>
+        <div class="p-3 rounded-lg bg-white shadow-sm border border-slate-200">
+          M
+        </div>
+        <div class="p-3 rounded-lg bg-white shadow-sm border border-slate-200">
+          L
+        </div>
+        <div class="p-3 rounded-lg bg-white shadow-sm border border-slate-200">
+          XL
+        </div>
+        <div class="p-3 rounded-lg bg-white shadow-sm border border-slate-200">
+          XXL
+        </div>
+        <div class="p-3 rounded-lg bg-white shadow-sm border border-slate-200">
+          XXXL (Coming Soon)
+        </div>
+      </div>
+    </section>
 
-    <!-- WHATSAPP SCRIPT -->
+    <!-- CONTACT -->
+    <section
+      id="contact"
+      class="max-w-6xl mx-auto px-4 sm:px-6 py-12 text-center"
+    >
+      <h2 class="text-2xl font-semibold text-primary mb-6">Get in Touch</h2>
+      <p class="text-slate-700 mb-4">
+        Have questions or want to place a custom order? Reach out to us!
+      </p>
+      <a
+        href="https://wa.me/919809452736"
+        target="_blank"
+        class="inline-block px-6 py-3 rounded-2xl bg-primary text-white font-semibold shadow hover:bg-[#532310]"
+        >WhatsApp Us</a
+      >
+    </section>
+
     <script>
-      function shopNow(button, productName) {
-        const container = button.closest('article');
-        const select = container.querySelector('select');
-        const size = select.value;
-
-        if (!size) {
-          alert('Please select a size');
-          return;
-        }
-
-        const phone = "919809452736";
-        const message = `Hi, I'm interested in *${productName}* (Size: ${size}). Can you help me place the order?`;
-        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-        window.open(url, '_blank');
+      function shopNow(productName) {
+        const encodedMessage = encodeURIComponent(
+          `Hi, I want to shop ${productName} from FitsByElara. Please help me place the order.`
+        );
+        const url = `https://wa.me/919809452736?text=${encodedMessage}`;
+        window.open(url, "_blank");
       }
     </script>
   </body>
