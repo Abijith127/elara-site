@@ -590,53 +590,43 @@
     </div>
   </section>
 
-    <!-- Testimonials Section -->
-<section class="max-w-4xl mx-auto my-12 px-4">
+<section class="max-w-3xl mx-auto my-12 px-4">
   <h2 class="text-2xl font-bold text-center text-[#632C1A] mb-6">What Our Customers Say</h2>
 
-  <div class="relative overflow-hidden rounded-xl shadow-md group">
-    <div id="testimonialWrapper" class="flex transition-transform duration-500 ease-in-out w-[300%]">
+  <div class="relative group overflow-hidden rounded-xl shadow-lg bg-white">
+    <!-- Slider Wrapper -->
+    <div id="testimonialWrapper" class="flex w-[300%] transition-transform duration-500">
       <!-- Testimonial 1 -->
-      <div class="w-full flex-shrink-0 p-6 bg-white">
-        <div class="text-center">
-          <img src="https://i.pravatar.cc/100?img=1" alt="Customer 1" class="mx-auto w-20 h-20 rounded-full mb-4" />
-          <p class="text-gray-700 text-lg italic">“Absolutely love the fit and feel of the fabric. Would highly recommend!”</p>
-          <p class="mt-2 font-semibold text-[#632C1A]">— Aisha R.</p>
-        </div>
+      <div class="w-full flex-shrink-0 p-6 text-center">
+        <img src="https://i.pravatar.cc/100?img=1" alt="Customer 1" class="mx-auto w-20 h-20 rounded-full mb-4" />
+        <p class="text-gray-700 italic mb-2">“Love the fabric quality and design. Fits perfectly and feels so comfortable!”</p>
+        <p class="text-[#632C1A] font-semibold">— Aisha R.</p>
       </div>
 
       <!-- Testimonial 2 -->
-      <div class="w-full flex-shrink-0 p-6 bg-white">
-        <div class="text-center">
-          <img src="https://i.pravatar.cc/100?img=2" alt="Customer 2" class="mx-auto w-20 h-20 rounded-full mb-4" />
-          <p class="text-gray-700 text-lg italic">“Stylish and comfortable! Delivered on time. Great customer service.”</p>
-          <p class="mt-2 font-semibold text-[#632C1A]">— Priya M.</p>
-        </div>
+      <div class="w-full flex-shrink-0 p-6 text-center">
+        <img src="https://i.pravatar.cc/100?img=2" alt="Customer 2" class="mx-auto w-20 h-20 rounded-full mb-4" />
+        <p class="text-gray-700 italic mb-2">“Super fast delivery and amazing packaging. Would recommend to friends.”</p>
+        <p class="text-[#632C1A] font-semibold">— Priya M.</p>
       </div>
 
       <!-- Testimonial 3 -->
-      <div class="w-full flex-shrink-0 p-6 bg-white">
-        <div class="text-center">
-          <img src="https://i.pravatar.cc/100?img=3" alt="Customer 3" class="mx-auto w-20 h-20 rounded-full mb-4" />
-          <p class="text-gray-700 text-lg italic">“My new favorite! I ordered another one in a different color.”</p>
-          <p class="mt-2 font-semibold text-[#632C1A]">— Neha K.</p>
-        </div>
+      <div class="w-full flex-shrink-0 p-6 text-center">
+        <img src="https://i.pravatar.cc/100?img=3" alt="Customer 3" class="mx-auto w-20 h-20 rounded-full mb-4" />
+        <p class="text-gray-700 italic mb-2">“Amazing colors and comfort! I got compliments all day.”</p>
+        <p class="text-[#632C1A] font-semibold">— Neha K.</p>
       </div>
     </div>
 
-    <!-- Navigation Arrows -->
-    <button id="prevTestimonial" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white border rounded-full shadow p-2 opacity-0 group-hover:opacity-100 transition">
-      &#8592;
-    </button>
-    <button id="nextTestimonial" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white border rounded-full shadow p-2 opacity-0 group-hover:opacity-100 transition">
-      &#8594;
-    </button>
+    <!-- Arrows -->
+    <button id="prevTestimonial" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white border rounded-full shadow p-2 opacity-0 group-hover:opacity-100 transition">&#8592;</button>
+    <button id="nextTestimonial" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white border rounded-full shadow p-2 opacity-0 group-hover:opacity-100 transition">&#8594;</button>
 
     <!-- Dots -->
-    <div class="flex justify-center mt-4 gap-2" id="testimonialDots">
-      <div class="dot w-2 h-2 rounded-full bg-gray-400 cursor-pointer"></div>
-      <div class="dot w-2 h-2 rounded-full bg-gray-400 cursor-pointer"></div>
-      <div class="dot w-2 h-2 rounded-full bg-gray-400 cursor-pointer"></div>
+    <div class="flex justify-center items-center gap-2 mt-4 pb-4" id="testimonialDots">
+      <div class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer"></div>
+      <div class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer"></div>
+      <div class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer"></div>
     </div>
   </div>
 </section>
@@ -646,7 +636,7 @@
   const dots = document.querySelectorAll('#testimonialDots .dot');
   let index = 0;
 
-  function updateTestimonialSlider(i) {
+  function updateSlider(i) {
     index = i;
     wrapper.style.transform = `translateX(-${index * 100}%)`;
     dots.forEach(dot => dot.classList.remove('bg-[#632C1A]'));
@@ -655,33 +645,31 @@
 
   document.getElementById('prevTestimonial').addEventListener('click', () => {
     index = (index - 1 + dots.length) % dots.length;
-    updateTestimonialSlider(index);
+    updateSlider(index);
   });
 
   document.getElementById('nextTestimonial').addEventListener('click', () => {
     index = (index + 1) % dots.length;
-    updateTestimonialSlider(index);
+    updateSlider(index);
   });
 
   dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => updateTestimonialSlider(i));
+    dot.addEventListener('click', () => updateSlider(i));
   });
 
-  // Touch support
+  // Swipe support
   let startX = 0;
-  wrapper.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
-  wrapper.addEventListener('touchend', (e) => {
+  wrapper.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+  wrapper.addEventListener('touchend', e => {
     const endX = e.changedTouches[0].clientX;
     if (startX - endX > 50) index = (index + 1) % dots.length;
     else if (endX - startX > 50) index = (index - 1 + dots.length) % dots.length;
-    updateTestimonialSlider(index);
+    updateSlider(index);
   });
 
-  // Initialize active dot
-  updateTestimonialSlider(0);
+  updateSlider(0);
 </script>
+
 
 
     <!-- CONTACT SECTION -->
