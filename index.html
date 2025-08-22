@@ -267,38 +267,24 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
     <!-- Product Card 1 -->
-    <style>
-  /* Container to hold both images side-by-side and slide */
-  .image-slide-container {
-    position: relative;
-    overflow: hidden;
-  }
-  .image-slide-wrapper {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-  .image-slide-container:hover .image-slide-wrapper {
-    transform: translateX(-100%);
-  }
-</style>
-
-<article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
+    <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
   <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
 
-  <!-- IMAGE SLIDE WRAPPER -->
-  <div class="image-slide-container aspect-[4/5] w-full">
-    <div class="image-slide-wrapper w-[200%]">
-      <img
-        src="images/Product elara 1.jpeg"
-        alt="Black Diamond Front"
-        class="w-1/2 object-cover"
-      />
-      <img
-        src="images/Product elara 2.jpeg"
-        alt="Black Diamond Back"
-        class="w-1/2 object-cover"
-      />
-    </div>
+  <!-- IMAGE SWAP WRAPPER -->
+  <div class="relative group overflow-hidden aspect-[4/5]">
+    <!-- Image 1: Default -->
+    <img
+      src="images/Product elara 1.jpeg"
+      alt="Kurtas & Kurtis — Black Diamond Front"
+      class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+    />
+
+    <!-- Image 2: Hovered -->
+    <img
+      src="images/Product elara 2.png"
+      alt="Kurtas & Kurtis — Black Diamond Back"
+      class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    />
   </div>
 
   <!-- PRODUCT INFO -->
@@ -457,38 +443,24 @@
     </article>
 
      <!-- Product Card 6 -->
-  <style>
-  /* Container to hold both images side-by-side and slide */
-  .image-slide-container {
-    position: relative;
-    overflow: hidden;
-  }
-  .image-slide-wrapper {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-  .image-slide-container:hover .image-slide-wrapper {
-    transform: translateX(-100%);
-  }
-</style>
-
-<article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
+ <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
   <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
 
-  <!-- IMAGE SLIDE WRAPPER -->
-  <div class="image-slide-container aspect-[4/5] w-full">
-    <div class="image-slide-wrapper w-[200%]">
-      <img
-        src="images/Product elara 3.jpeg"
-        alt="Black Diamond Front"
-        class="w-1/2 object-cover"
-      />
-      <img
-        src="images/Product elara 2.jpeg"
-        alt="Black Diamond Back"
-        class="w-1/2 object-cover"
-      />
-    </div>
+  <!-- IMAGE SWAP WRAPPER -->
+  <div class="relative group overflow-hidden aspect-[4/5]">
+    <!-- Image 1: Default -->
+    <img
+      src="images/Product elara 1.jpeg"
+      alt="Kurtas & Kurtis — Black Diamond Front"
+      class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+    />
+
+    <!-- Image 2: Hovered -->
+    <img
+      src="images/Product elara 2.png"
+      alt="Kurtas & Kurtis — Black Diamond Back"
+      class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    />
   </div>
 
   <!-- PRODUCT INFO -->
@@ -515,7 +487,7 @@
     </div>
   </div>
 </article>
-
+    
   </div>
 </section>
 
