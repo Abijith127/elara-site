@@ -417,61 +417,49 @@
     </article>
 
          <!-- Product Card 6 -->
-    <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
-      <img src="images/Product elara 2.jpeg" alt="Kurtas & Kurtis — Black Diamond" class="aspect-[4/5] object-cover" />
-      <div class="p-4 flex flex-col flex-grow">
-        <div class="text-lg font-semibold text-[#632C1A]">Kurtas & Kurtis — Black Diamond</div>
-        <div class="mt-1 flex items-baseline gap-2">
-          <div class="text-lg font-bold text-[#A57D60]">₹599</div>
-          <div class="text-sm line-through text-slate-400">₹999</div>
-        </div>
-        <div class="mt-3 flex items-center gap-2">
-          <select required class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow">
-            <option value="" disabled selected>Choose size</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
-          </select>
-          <button onclick="shopNow(this, 'Kurtas & Kurtis — Black Diamond')" class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all">
-            Shop Now
-          </button>
-        </div>
-      </div>
-    </article>
-
-     <!-- Product Card 6 -->
  <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
   <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
-
-  <!-- IMAGE SWAP WRAPPER -->
-  <div class="relative group overflow-hidden aspect-[4/5]">
-    <!-- Image 1: Default -->
-    <img
-      src="images/Product elara 1.jpeg"
-      alt="Kurtas & Kurtis — Black Diamond Front"
-      class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-    />
-
-    <!-- Image 2: Hovered -->
-    <img
-      src="images/Product elara 2.jpeg"
-      alt="Kurtas & Kurtis — Black Diamond Front"
-      class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-    />
-  </div>
-
-  <!-- PRODUCT INFO -->
-  <div class="p-4 flex flex-col flex-grow">
-    <div class="text-lg font-semibold text-[#632C1A]">Kurtas & Kurtis — Black Diamond</div>
-    <div class="mt-1 flex items-baseline gap-2">
-      <div class="text-lg font-bold text-[#A57D60]">₹599</div>
-      <div class="text-sm line-through text-slate-400">₹999</div>
+  
+  <!-- Image slider container -->
+  <div class="relative w-full aspect-[4/5] overflow-hidden rounded-3xl">
+    <div id="imageWrapper" class="flex w-[200%] h-full transition-transform duration-500 cursor-pointer">
+      <img
+        src="images/Product_2.jpg"
+        alt="Front Image"
+        class="w-1/2 object-cover"
+      />
+      <img
+        src="images/Product_1.png"
+        alt="Back Image"
+        class="w-1/2 object-cover"
+      />
     </div>
 
-    <!-- SIZE + CTA -->
+    <!-- Left arrow -->
+    <button
+      id="prevBtn"
+      class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 hidden group-hover:block hover:bg-opacity-100 transition"
+      aria-label="Previous Image"
+    >
+      &#8592;
+    </button>
+
+    <!-- Right arrow -->
+    <button
+      id="nextBtn"
+      class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 hidden group-hover:block hover:bg-opacity-100 transition"
+      aria-label="Next Image"
+    >
+      &#8594;
+    </button>
+  </div>
+
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="text-lg font-semibold text-[#632C1A]">Kurtas & Kurtis — Red Boxy</div>
+    <div class="mt-1 flex items-baseline gap-2">
+      <div class="text-lg font-bold text-[#A57D60]">₹499</div>
+      <div class="text-sm line-through text-slate-400">₹899</div>
+    </div>
     <div class="mt-3 flex items-center gap-2">
       <select required class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow">
         <option value="" disabled selected>Choose size</option>
@@ -481,12 +469,55 @@
         <option value="XL">XL</option>
         <option value="XXL">XXL</option>
       </select>
-      <button onclick="shopNow(this, 'Kurtas & Kurtis — Black Diamond')" class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all">
+      <button onclick="shopNow(this, 'Kurtas & Kurtis — Red Boxy')" class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all">
         Shop Now
       </button>
     </div>
   </div>
 </article>
+
+<script>
+  const wrapper = document.getElementById('imageWrapper');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let current = 0;
+
+  function updateSlide() {
+    wrapper.style.transform = `translateX(-${current * 50}%)`;
+  }
+
+  prevBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    current = 0;
+    updateSlide();
+  });
+
+  nextBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    current = 1;
+    updateSlide();
+  });
+
+  let startX = 0;
+  let endX = 0;
+
+  wrapper.parentElement.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  wrapper.parentElement.addEventListener('touchmove', e => {
+    endX = e.touches[0].clientX;
+  });
+
+  wrapper.parentElement.addEventListener('touchend', () => {
+    if (startX - endX > 50) {
+      current = 1;
+    } else if (endX - startX > 50) {
+      current = 0;
+    }
+    updateSlide();
+  });
+</script>
     
   </div>
 </section>
