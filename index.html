@@ -423,30 +423,58 @@
     </article>
 
      <!-- Product Card 6 -->
-    <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-      <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
-      <img src="images/Product elara 3.jpeg" alt="Kurtas & Kurtis — Black Diamond" class="aspect-[4/5] object-cover" />
-      <div class="p-4 flex flex-col flex-grow">
-        <div class="text-lg font-semibold text-[#632C1A]">Kurtas & Kurtis — Black Diamond</div>
-        <div class="mt-1 flex items-baseline gap-2">
-          <div class="text-lg font-bold text-[#A57D60]">₹599</div>
-          <div class="text-sm line-through text-slate-400">₹999</div>
-        </div>
-        <div class="mt-3 flex items-center gap-2">
-          <select required class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow">
-            <option value="" disabled selected>Choose size</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
-          </select>
-          <button onclick="shopNow(this, 'Kurtas & Kurtis — Black Diamond')" class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all">
-            Shop Now
-          </button>
-        </div>
-      </div>
-    </article>
+   <article class="relative group rounded-3xl bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
+  <span class="absolute top-3 left-3 bg-[#A57D60] text-white text-[10px] tracking-widest font-bold px-2 py-0.5 rounded-sm uppercase shadow-md">NEW</span>
+
+  <!-- IMAGE SWAP WRAPPER -->
+  <div class="relative group overflow-hidden aspect-[4/5]">
+    <!-- Image 1: Default -->
+    <img
+      src="images/Product elara 3.jpeg"
+      alt="Kurtas & Kurtis — Black Diamond Front"
+      class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+    />
+
+    <!-- Image 2: Hovered -->
+    <img
+      src="Product elara 4.jpeg"
+      alt="Kurtas & Kurtis — Black Diamond Back"
+      class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    />
+  </div>
+
+        <!-- Image 3: Hovered -->
+    <img
+      src="Product elara 1.jpeg"
+      alt="Kurtas & Kurtis — Black Diamond Back"
+      class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    />
+  </div>
+
+  <!-- PRODUCT INFO -->
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="text-lg font-semibold text-[#632C1A]">Kurtas & Kurtis — Black Diamond</div>
+    <div class="mt-1 flex items-baseline gap-2">
+      <div class="text-lg font-bold text-[#A57D60]">₹599</div>
+      <div class="text-sm line-through text-slate-400">₹999</div>
+    </div>
+
+    <!-- SIZE + CTA -->
+    <div class="mt-3 flex items-center gap-2">
+      <select required class="rounded-xl border border-slate-300 px-3 py-2 text-sm flex-grow">
+        <option value="" disabled selected>Choose size</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XXL">XXL</option>
+      </select>
+      <button onclick="shopNow(this, 'Kurtas & Kurtis — Black Diamond')" class="rounded-xl bg-[#632C1A] text-white px-4 py-2 text-sm font-medium hover:bg-[#4e2213] transition-all">
+        Shop Now
+      </button>
+    </div>
+  </div>
+</article>
     
   </div>
 </section>
