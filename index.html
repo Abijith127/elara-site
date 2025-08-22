@@ -604,35 +604,44 @@
     <img src="https://i.pravatar.cc/50?img=8" class="absolute w-10 h-10 rounded-full bottom-4 right-10 hidden sm:block" />
 
     <!-- Testimonial Card -->
-    <div class="bg-white rounded-xl shadow-lg p-8 relative z-10">
-      <div class="w-24 h-24 mx-auto mb-4">
-        <img src="https://i.pravatar.cc/150?img=7" alt="Client" class="w-full h-full rounded-full border-4 border-white shadow-md" />
+   <section class="bg-[#F9F6F4] py-16">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <!-- Heading -->
+    <h2 class="text-2xl md:text-3xl font-bold text-[#632C1A]">What Our Clients Say</h2>
+    <p class="text-sm md:text-base text-gray-500 mt-2">
+      Our Clients send us bunch of smilies with our services and we love them
+    </p>
+
+    <!-- Testimonial Card -->
+    <div class="bg-white mt-10 rounded-2xl shadow-md px-8 py-10 max-w-2xl mx-auto">
+      <!-- Avatar -->
+      <div class="w-24 h-24 rounded-full mx-auto overflow-hidden border-4 border-white shadow mb-4">
+        <img src="https://i.pravatar.cc/150?img=7" alt="Client" class="w-full h-full object-cover" />
       </div>
-      <h3 class="font-bold text-lg text-[#2C1C0C]">Raymond Galario</h3>
-      <p class="text-sm text-gray-400 mb-2">Sydney, Australia</p>
+
+      <!-- Client Name & Location -->
+      <h3 class="font-semibold text-lg text-[#2C1C0C]">Raymond Galario</h3>
+      <p class="text-sm text-gray-500">Singapore</p>
 
       <!-- Stars -->
-      <div class="flex justify-center gap-1 text-yellow-400 mb-4">
+      <div class="flex justify-center gap-1 text-yellow-400 mt-2 mb-4">
         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
       </div>
 
-      <!-- Quote -->
-      <p class="text-gray-700 text-sm leading-relaxed">
-        “You’ll get the best of what you put in. The team is working at their best to provide us variety of spaces and homes. Had a great experience working with them. Thanks a lot.”
+      <!-- Feedback -->
+      <p class="text-sm text-gray-600 leading-relaxed">
+        “Products were of top-notch quality and arrived on time. Impressed with the service! Had a great experience working with them. Thanks a lot.”
       </p>
     </div>
 
-    <!-- Arrows -->
-    <div class="flex justify-between mt-6 px-8">
-      <button class="bg-[#F8E8D6] text-[#C59B46] rounded-full p-3 hover:scale-110 transition" id="prevTestimonial">
-        &#8592;
-      </button>
-      <button class="bg-[#F8E8D6] text-[#C59B46] rounded-full p-3 hover:scale-110 transition" id="nextTestimonial">
-        &#8594;
-      </button>
+    <!-- Floating profile bubbles (optional) -->
+    <div class="flex justify-center gap-6 mt-6">
+      <img src="https://i.pravatar.cc/40?img=12" class="w-10 h-10 rounded-full border-2 border-white shadow-md" alt="User1" />
+      <img src="https://i.pravatar.cc/40?img=18" class="w-10 h-10 rounded-full border-2 border-white shadow-md" alt="User2" />
     </div>
   </div>
 </section>
+
 
     <script>
   const testimonials = [
