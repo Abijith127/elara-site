@@ -591,99 +591,45 @@
   </section>
 
     <!-- Testimonial Card -->
-   <section class="bg-[#F9F6F4] py-16">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <!-- Heading -->
-    <h2 class="text-2xl md:text-3xl font-bold text-[#632C1A]">What Our Clients Say</h2>
-    <p class="text-sm md:text-base text-gray-500 mt-2">
-      Our Clients send us bunch of smilies with our services and we love them
-    </p>
-
-    <!-- Testimonial Card -->
-    <div class="bg-white mt-10 rounded-2xl shadow-md px-8 py-10 max-w-2xl mx-auto">
-      <!-- Avatar -->
-      <div class="w-24 h-24 rounded-full mx-auto overflow-hidden border-4 border-white shadow mb-4">
-        <img src="https://i.pravatar.cc/150?img=7" alt="Client" class="w-full h-full object-cover" />
+  <section class="bg-[#F9F6F4] py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-8">
+      <!-- Left Side: Image -->
+      <div class="flex-shrink-0">
+        <img
+          src="https://i.ibb.co/3mD0Xcs/user-2.jpg"
+          alt="Client"
+          class="w-36 h-36 rounded-full object-cover border-4 border-[#A57D60] shadow-md"
+        />
       </div>
 
-      <!-- Client Name & Location -->
-      <h3 class="font-semibold text-lg text-[#2C1C0C]">Raymond Galario</h3>
-      <p class="text-sm text-gray-500">Singapore</p>
+      <!-- Right Side: Content -->
+      <div class="text-center md:text-left">
+        <!-- Quote icon -->
+        <div class="text-3xl text-[#A57D60] mb-2">“</div>
 
-      <!-- Stars -->
-      <div class="flex justify-center gap-1 text-yellow-400 mt-2 mb-4">
-        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        <!-- Name & Title -->
+        <p class="text-lg font-semibold text-[#632C1A]">Kate Rogers <span class="text-gray-400 font-normal text-sm">– Graphic Designer</span></p>
+
+        <!-- Stars -->
+        <div class="flex justify-center md:justify-start text-[#F4B400] mt-1 mb-2">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+
+        <!-- Title -->
+        <h3 class="text-xl font-bold text-[#632C1A] mb-2">Amazing Customer Service</h3>
+
+        <!-- Testimonial Text -->
+        <p class="text-sm text-gray-600 max-w-xl">
+          I needed a refund for tickets to an event that was changed last minute. I experienced great customer service and the issue was resolved in a timely manner. Thanks to agent Sandra!
+        </p>
+
+        <!-- Closing quote -->
+        <div class="text-3xl text-[#A57D60] mt-4 text-right">”</div>
       </div>
-
-      <!-- Feedback -->
-      <p class="text-sm text-gray-600 leading-relaxed">
-        “Products were of top-notch quality and arrived on time. Impressed with the service! Had a great experience working with them. Thanks a lot.”
-      </p>
-    </div>
-
-    <!-- Floating profile bubbles (optional) -->
-    <div class="flex justify-center gap-6 mt-6">
-      <img src="https://i.pravatar.cc/40?img=12" class="w-10 h-10 rounded-full border-2 border-white shadow-md" alt="User1" />
-      <img src="https://i.pravatar.cc/40?img=18" class="w-10 h-10 rounded-full border-2 border-white shadow-md" alt="User2" />
     </div>
   </div>
 </section>
-
-
-    <script>
-  const testimonials = [
-    {
-      name: "Raymond Galario",
-      location: "Sydney, Australia",
-      img: "https://i.pravatar.cc/150?img=7",
-      quote: "You’ll get the best of what you put in. The team is working at their best to provide us variety of spaces and homes. Had a great experience working with them. Thanks a lot.",
-    },
-    {
-      name: "Sana Kapoor",
-      location: "Delhi, India",
-      img: "https://i.pravatar.cc/150?img=13",
-      quote: "Lovely fabric and amazing customer care. Felt valued and supported. Highly recommended!",
-    },
-    {
-      name: "Jason Liu",
-      location: "Singapore",
-      img: "https://i.pravatar.cc/150?img=23",
-      quote: "Products were of top-notch quality and arrived on time. Impressed with the service!",
-    },
-  ];
-
-  let index = 0;
-  const nameEl = document.querySelector("h3");
-  const locEl = document.querySelector("p.text-sm.text-gray-400");
-  const quoteEl = document.querySelector("p.text-gray-700");
-  const imgEl = document.querySelector("img[alt='Client']");
-
-  function updateTestimonial(i) {
-    const t = testimonials[i];
-    nameEl.textContent = t.name;
-    locEl.textContent = t.location;
-    quoteEl.textContent = `“${t.quote}”`;
-    imgEl.src = t.img;
-  }
-
-  document.getElementById("prevTestimonial").addEventListener("click", () => {
-    index = (index - 1 + testimonials.length) % testimonials.length;
-    updateTestimonial(index);
-  });
-
-  document.getElementById("nextTestimonial").addEventListener("click", () => {
-    index = (index + 1) % testimonials.length;
-    updateTestimonial(index);
-  });
-
-  // Optional: Auto play
-  // setInterval(() => {
-  //   index = (index + 1) % testimonials.length;
-  //   updateTestimonial(index);
-  // }, 5000);
-</script>
-
-
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center bg-accent/10 rounded-3xl shadow-md">
