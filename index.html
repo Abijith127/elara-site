@@ -590,84 +590,101 @@
     </div>
   </section>
 
-<section class="max-w-3xl mx-auto my-12 px-4">
-  <h2 class="text-2xl font-bold text-center text-[#632C1A] mb-6">What Our Customers Say</h2>
+<section class="relative bg-[#F9F6F4] py-16">
+  <div class="text-center mb-10">
+    <h2 class="text-2xl md:text-3xl font-bold text-[#2C1C0C]">What Our Clients Say</h2>
+    <p class="text-sm md:text-base text-gray-500 mt-2">Our Clients send us bunch of smilies with our services and we love them</p>
+  </div>
 
-  <div class="relative group overflow-hidden rounded-xl shadow-lg bg-white">
-    <!-- Slider Wrapper -->
-    <div id="testimonialWrapper" class="flex w-[300%] transition-transform duration-500">
-      <!-- Testimonial 1 -->
-      <div class="w-full flex-shrink-0 p-6 text-center">
-        <img src="https://i.pravatar.cc/100?img=1" alt="Customer 1" class="mx-auto w-20 h-20 rounded-full mb-4" />
-        <p class="text-gray-700 italic mb-2">“Love the fabric quality and design. Fits perfectly and feels so comfortable!”</p>
-        <p class="text-[#632C1A] font-semibold">— Aisha R.</p>
+  <div class="max-w-xl mx-auto text-center relative px-4">
+    <!-- Floating Avatars -->
+    <img src="https://i.pravatar.cc/50?img=32" class="absolute w-10 h-10 rounded-full top-0 left-4 hidden sm:block" />
+    <img src="https://i.pravatar.cc/50?img=12" class="absolute w-10 h-10 rounded-full top-8 right-6 hidden sm:block" />
+    <img src="https://i.pravatar.cc/50?img=48" class="absolute w-10 h-10 rounded-full bottom-6 left-6 hidden sm:block" />
+    <img src="https://i.pravatar.cc/50?img=8" class="absolute w-10 h-10 rounded-full bottom-4 right-10 hidden sm:block" />
+
+    <!-- Testimonial Card -->
+    <div class="bg-white rounded-xl shadow-lg p-8 relative z-10">
+      <div class="w-24 h-24 mx-auto mb-4">
+        <img src="https://i.pravatar.cc/150?img=7" alt="Client" class="w-full h-full rounded-full border-4 border-white shadow-md" />
+      </div>
+      <h3 class="font-bold text-lg text-[#2C1C0C]">Raymond Galario</h3>
+      <p class="text-sm text-gray-400 mb-2">Sydney, Australia</p>
+
+      <!-- Stars -->
+      <div class="flex justify-center gap-1 text-yellow-400 mb-4">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
       </div>
 
-      <!-- Testimonial 2 -->
-      <div class="w-full flex-shrink-0 p-6 text-center">
-        <img src="https://i.pravatar.cc/100?img=2" alt="Customer 2" class="mx-auto w-20 h-20 rounded-full mb-4" />
-        <p class="text-gray-700 italic mb-2">“Super fast delivery and amazing packaging. Would recommend to friends.”</p>
-        <p class="text-[#632C1A] font-semibold">— Priya M.</p>
-      </div>
-
-      <!-- Testimonial 3 -->
-      <div class="w-full flex-shrink-0 p-6 text-center">
-        <img src="https://i.pravatar.cc/100?img=3" alt="Customer 3" class="mx-auto w-20 h-20 rounded-full mb-4" />
-        <p class="text-gray-700 italic mb-2">“Amazing colors and comfort! I got compliments all day.”</p>
-        <p class="text-[#632C1A] font-semibold">— Neha K.</p>
-      </div>
+      <!-- Quote -->
+      <p class="text-gray-700 text-sm leading-relaxed">
+        “You’ll get the best of what you put in. The team is working at their best to provide us variety of spaces and homes. Had a great experience working with them. Thanks a lot.”
+      </p>
     </div>
 
     <!-- Arrows -->
-    <button id="prevTestimonial" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white border rounded-full shadow p-2 opacity-0 group-hover:opacity-100 transition">&#8592;</button>
-    <button id="nextTestimonial" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white border rounded-full shadow p-2 opacity-0 group-hover:opacity-100 transition">&#8594;</button>
-
-    <!-- Dots -->
-    <div class="flex justify-center items-center gap-2 mt-4 pb-4" id="testimonialDots">
-      <div class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer"></div>
-      <div class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer"></div>
-      <div class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer"></div>
+    <div class="flex justify-between mt-6 px-8">
+      <button class="bg-[#F8E8D6] text-[#C59B46] rounded-full p-3 hover:scale-110 transition" id="prevTestimonial">
+        &#8592;
+      </button>
+      <button class="bg-[#F8E8D6] text-[#C59B46] rounded-full p-3 hover:scale-110 transition" id="nextTestimonial">
+        &#8594;
+      </button>
     </div>
   </div>
 </section>
 
-<script>
-  const wrapper = document.getElementById('testimonialWrapper');
-  const dots = document.querySelectorAll('#testimonialDots .dot');
-  let index = 0;
+    <script>
+  const testimonials = [
+    {
+      name: "Raymond Galario",
+      location: "Sydney, Australia",
+      img: "https://i.pravatar.cc/150?img=7",
+      quote: "You’ll get the best of what you put in. The team is working at their best to provide us variety of spaces and homes. Had a great experience working with them. Thanks a lot.",
+    },
+    {
+      name: "Sana Kapoor",
+      location: "Delhi, India",
+      img: "https://i.pravatar.cc/150?img=13",
+      quote: "Lovely fabric and amazing customer care. Felt valued and supported. Highly recommended!",
+    },
+    {
+      name: "Jason Liu",
+      location: "Singapore",
+      img: "https://i.pravatar.cc/150?img=23",
+      quote: "Products were of top-notch quality and arrived on time. Impressed with the service!",
+    },
+  ];
 
-  function updateSlider(i) {
-    index = i;
-    wrapper.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach(dot => dot.classList.remove('bg-[#632C1A]'));
-    dots[index].classList.add('bg-[#632C1A]');
+  let index = 0;
+  const nameEl = document.querySelector("h3");
+  const locEl = document.querySelector("p.text-sm.text-gray-400");
+  const quoteEl = document.querySelector("p.text-gray-700");
+  const imgEl = document.querySelector("img[alt='Client']");
+
+  function updateTestimonial(i) {
+    const t = testimonials[i];
+    nameEl.textContent = t.name;
+    locEl.textContent = t.location;
+    quoteEl.textContent = `“${t.quote}”`;
+    imgEl.src = t.img;
   }
 
-  document.getElementById('prevTestimonial').addEventListener('click', () => {
-    index = (index - 1 + dots.length) % dots.length;
-    updateSlider(index);
+  document.getElementById("prevTestimonial").addEventListener("click", () => {
+    index = (index - 1 + testimonials.length) % testimonials.length;
+    updateTestimonial(index);
   });
 
-  document.getElementById('nextTestimonial').addEventListener('click', () => {
-    index = (index + 1) % dots.length;
-    updateSlider(index);
+  document.getElementById("nextTestimonial").addEventListener("click", () => {
+    index = (index + 1) % testimonials.length;
+    updateTestimonial(index);
   });
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => updateSlider(i));
-  });
-
-  // Swipe support
-  let startX = 0;
-  wrapper.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-  wrapper.addEventListener('touchend', e => {
-    const endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) index = (index + 1) % dots.length;
-    else if (endX - startX > 50) index = (index - 1 + dots.length) % dots.length;
-    updateSlider(index);
-  });
-
-  updateSlider(0);
+  // Optional: Auto play
+  // setInterval(() => {
+  //   index = (index + 1) % testimonials.length;
+  //   updateTestimonial(index);
+  // }, 5000);
 </script>
 
 
